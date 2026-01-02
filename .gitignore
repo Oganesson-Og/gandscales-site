@@ -1,0 +1,100 @@
+# =========================
+# Secrets / env files
+# =========================
+.env
+.env.*
+!.env.example
+!.env.template
+
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+dist/
+build/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+# Jupyter
+.ipynb_checkpoints/
+
+# =========================
+# Node / Frontend
+# =========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Next.js / React build outputs
+.next/
+out/
+dist/
+build/
+.cache/
+.vite/
+
+# =========================
+# Logs / runtime
+# =========================
+*.log
+logs/
+tmp/
+temp/
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# IDEs
+# =========================
+.vscode/
+.idea/
+*.iml
+.cursor/
+
+# =========================
+# Local databases (optional)
+# =========================
+*.sqlite
+*.sqlite3
+
+# =========================
+# Docker overrides (optional)
+# =========================
+docker-compose.override.yml
+
+
+
+# =========================
+# Specific Zip files
+# =========================
+gandtscales.zip
+# archives
+*.zip
+*.tar
+*.tar.gz
+*.7z
+gandtscales_site
+

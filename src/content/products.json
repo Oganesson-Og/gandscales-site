@@ -1,0 +1,250 @@
+{
+  "categories": [
+    {
+      "id": "jewellery-weighing-scales",
+      "name": "Jewellery Weighing Scales",
+      "slug": "jewellery-weighing-scales",
+      "description": "Precision scales for jewellery and precious metal weighing"
+    },
+    {
+      "id": "industrial-scales",
+      "name": "Industrial Scales",
+      "slug": "industrial-scales",
+      "description": "Heavy-duty scales for industrial applications"
+    },
+    {
+      "id": "agricultural-scales",
+      "name": "Agricultural Scales",
+      "slug": "agricultural-scales",
+      "description": "Scales for livestock and agricultural produce"
+    },
+    {
+      "id": "retail-scales",
+      "name": "Retail Scales",
+      "slug": "retail-scales",
+      "description": "Point of sale and retail weighing solutions"
+    },
+    {
+      "id": "weighbridges",
+      "name": "Weighbridges",
+      "slug": "weighbridges",
+      "description": "Vehicle and truck weighing systems"
+    },
+    {
+      "id": "accessories",
+      "name": "Accessories & Parts",
+      "slug": "accessories",
+      "description": "Scale parts, loadcells, and accessories"
+    }
+  ],
+  "products": [
+    {
+      "id": "butchery-adam-bench-scale",
+      "name": "Butchery Adam Bench Scale",
+      "slug": "butchery-adam-bench-scale",
+      "category": "retail-scales",
+      "description": "Professional bench scale designed for butcheries and meat processing",
+      "image": "/images/products/butchery-adam-bench-scale.webp",
+      "featured": true,
+      "applications": ["Butchery", "Meat Processing", "Food Industry"]
+    },
+    {
+      "id": "carat-tanita",
+      "name": "Carat Tanita",
+      "slug": "carat-tanita",
+      "category": "jewellery-weighing-scales",
+      "description": "High-precision carat scale for jewellery weighing",
+      "image": "/images/products/carat-tanita.jpg",
+      "featured": true,
+      "applications": ["Jewellery", "Precious Metals", "Gemstones"]
+    },
+    {
+      "id": "cattle-cage",
+      "name": "Cattle Cage",
+      "slug": "cattle-cage",
+      "category": "agricultural-scales",
+      "description": "Livestock weighing cage for cattle",
+      "image": "/images/products/cattle-cage.jpg",
+      "featured": true,
+      "applications": ["Livestock", "Agriculture", "Farming"]
+    },
+    {
+      "id": "crane-scales",
+      "name": "Crane Scales",
+      "slug": "crane-scales",
+      "category": "industrial-scales",
+      "description": "Heavy-duty crane scales for industrial lifting and weighing",
+      "image": "/images/products/crane-scales.png",
+      "featured": true,
+      "applications": ["Industrial", "Shipping", "Warehousing"]
+    },
+    {
+      "id": "deli-equipment",
+      "name": "Deli Equipment",
+      "slug": "deli-equipment",
+      "category": "retail-scales",
+      "description": "Professional deli and supermarket weighing equipment",
+      "image": "/images/products/deli-equipment.webp",
+      "featured": false,
+      "applications": ["Retail", "Supermarket", "Deli Counter"]
+    },
+    {
+      "id": "hanging-scales",
+      "name": "Hanging Scales",
+      "slug": "hanging-scales",
+      "category": "industrial-scales",
+      "description": "Portable and industrial hanging scales",
+      "image": "/images/products/hanging-scales.jpg",
+      "featured": false,
+      "applications": ["Industrial", "Agriculture", "Retail"]
+    },
+    {
+      "id": "labels",
+      "name": "Labels",
+      "slug": "labels",
+      "category": "accessories",
+      "description": "Thermal labels and printing supplies for weighing scales",
+      "image": "/images/products/labels.webp",
+      "featured": false,
+      "applications": ["Retail", "Labeling", "POS Systems"]
+    },
+    {
+      "id": "loadcell",
+      "name": "Loadcell",
+      "slug": "loadcell",
+      "category": "accessories",
+      "description": "Precision load cells for scale systems and integrations",
+      "image": "/images/products/loadcell.webp",
+      "featured": false,
+      "applications": ["Industrial", "Scale Repair", "Integration"]
+    },
+    {
+      "id": "manual-scales",
+      "name": "Manual Scales",
+      "slug": "manual-scales",
+      "category": "retail-scales",
+      "description": "Traditional mechanical and manual weighing scales",
+      "image": "/images/products/manual-scales.jpg",
+      "featured": false,
+      "applications": ["Retail", "Kitchen", "General Purpose"]
+    },
+    {
+      "id": "overhead-scales",
+      "name": "Overhead Scales",
+      "slug": "overhead-scales",
+      "category": "industrial-scales",
+      "description": "Overhead monorail and suspended weighing systems",
+      "image": "/images/products/overhead-scales.png",
+      "featured": true,
+      "applications": ["Meat Processing", "Abattoirs", "Industrial"]
+    },
+    {
+      "id": "pig-cage",
+      "name": "Pig Cage",
+      "slug": "pig-cage",
+      "category": "agricultural-scales",
+      "description": "Livestock weighing cage for pigs and small animals",
+      "image": "/images/products/pig-cage.png",
+      "featured": false,
+      "applications": ["Livestock", "Agriculture", "Farming"]
+    },
+    {
+      "id": "platform-scales",
+      "name": "Platform Scales",
+      "slug": "platform-scales",
+      "category": "industrial-scales",
+      "description": "Floor and platform scales for general industrial weighing",
+      "image": "/images/products/platform-scales.avif",
+      "featured": true,
+      "applications": ["Industrial", "Warehousing", "Shipping"]
+    },
+    {
+      "id": "veterinary-scale",
+      "name": "Veterinary Scale",
+      "slug": "veterinary-scale",
+      "category": "agricultural-scales",
+      "description": "Specialized scales for veterinary clinics and animal weighing",
+      "image": "/images/products/veterinary-scale.png",
+      "featured": false,
+      "applications": ["Veterinary", "Animal Clinics", "Pet Care"]
+    },
+    {
+      "id": "weighbeams",
+      "name": "Weighbeams",
+      "slug": "weighbeams",
+      "category": "industrial-scales",
+      "description": "Industrial weighbeam scales for heavy-duty applications",
+      "image": "/images/products/weighbeams.avif",
+      "featured": false,
+      "applications": ["Industrial", "Pallet Weighing", "Warehousing"]
+    },
+    {
+      "id": "weighbridge-heads",
+      "name": "Weighbridge Heads",
+      "slug": "weighbridge-heads",
+      "category": "weighbridges",
+      "description": "Weighbridge indicators and control heads",
+      "image": "/images/products/weighbridge-heads.png",
+      "featured": false,
+      "applications": ["Weighbridges", "Vehicle Weighing", "Mining"]
+    },
+    {
+      "id": "weighbridge-loadcell",
+      "name": "Weighbridge Loadcell",
+      "slug": "weighbridge-loadcell",
+      "category": "weighbridges",
+      "description": "Heavy-duty loadcells for weighbridge installations",
+      "image": "/images/products/weighbridge-loadcell.png",
+      "featured": false,
+      "applications": ["Weighbridges", "Mining", "Logistics"]
+    },
+    {
+      "id": "weighbridge",
+      "name": "Weighbridge",
+      "slug": "weighbridge",
+      "category": "weighbridges",
+      "description": "Complete weighbridge systems for vehicle and truck weighing",
+      "image": "/images/products/weighbridge.png",
+      "featured": true,
+      "applications": ["Mining", "Logistics", "Agriculture"]
+    }
+  ],
+  "industries": [
+    {
+      "id": "agriculture",
+      "name": "Agriculture & Farming",
+      "icon": "tractor",
+      "products": ["cattle-cage", "pig-cage", "veterinary-scale", "platform-scales"]
+    },
+    {
+      "id": "retail",
+      "name": "Retail & Supermarket",
+      "icon": "store",
+      "products": ["deli-equipment", "manual-scales", "labels"]
+    },
+    {
+      "id": "butchery",
+      "name": "Butchery & Meat Processing",
+      "icon": "beef",
+      "products": ["butchery-adam-bench-scale", "overhead-scales", "hanging-scales"]
+    },
+    {
+      "id": "jewellery",
+      "name": "Jewellery & Precious Metals",
+      "icon": "gem",
+      "products": ["carat-tanita"]
+    },
+    {
+      "id": "industrial",
+      "name": "Industrial & Warehousing",
+      "icon": "factory",
+      "products": ["crane-scales", "platform-scales", "weighbeams"]
+    },
+    {
+      "id": "mining",
+      "name": "Mining & Logistics",
+      "icon": "truck",
+      "products": ["weighbridge", "weighbridge-heads", "weighbridge-loadcell"]
+    }
+  ]
+}
