@@ -5,6 +5,7 @@ import { Navbar } from "@/components/layout/navbar"
 import { Footer } from "@/components/layout/footer"
 import { Toaster } from "@/components/ui/toaster"
 import { ThemeProvider } from "@/components/providers/theme-provider"
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
 
 const inter = Inter({
   subsets: ["latin"],
@@ -49,7 +50,7 @@ export const metadata: Metadata = {
       "Leading weighing company providing precision weighing equipment solutions. Reliable supply, repair, and certified calibration services since 2004.",
     images: [
       {
-        url: "/og-image.svg",
+        url: "${basePath}/og-image.svg",
         width: 1200,
         height: 630,
         alt: "G&T Scale Services",
@@ -61,7 +62,7 @@ export const metadata: Metadata = {
     title: "G&T Scale Services | Precision Weighing Equipment Solutions",
     description:
       "Leading weighing company providing precision weighing equipment solutions. Reliable supply, repair, and certified calibration services since 2004.",
-    images: ["/og-image.svg"],
+    images: ["${basePath}/og-image.svg"],
   },
   robots: {
     index: true,
@@ -75,10 +76,10 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/favicon.svg",
-    apple: "/apple-touch-icon.svg",
+    icon: "${basePath}/favicon.svg",
+    apple: "${basePath}/apple-touch-icon.svg",
   },
-  manifest: "/site.webmanifest",
+  manifest: "${basePath}/site.webmanifest",
 }
 
 export default function RootLayout({
