@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { PageHero } from "@/components/sections/page-hero"
 import { COMPANY_FOUNDED_YEAR } from "@/lib/utils"
+import { withBasePath } from "@/lib/withBasePath"
+
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -138,7 +140,7 @@ export default function AboutPage() {
           <div className="relative">
             <div className="relative aspect-[4/3] rounded-2xl bg-white/5 border border-white/10 overflow-hidden">
               <Image
-                src="/images/marketing/truck-scales-weighbridges-002.jpg"
+                src={withBasePath("/images/marketing/truck-scales-weighbridges-002.jpg")}
                 alt="Weighbridge installation and service work"
                 fill
                 className="object-cover"
