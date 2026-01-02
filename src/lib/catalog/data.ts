@@ -1,5 +1,5 @@
 import catalogData from "@/content/products.json"
-
+import { withBasePath } from "@/lib/withBasePath";
 // Types
 export type Category = {
   id: string
@@ -22,14 +22,16 @@ export type Product = {
 // Fallback image
 export const PRODUCT_IMAGE_PLACEHOLDER = "/images/product-placeholder.svg"
 
-export function getProductImageUrl(rawUrl: string): string {
-  // Already a local path - return as-is
-  if (rawUrl.startsWith("/images/")) return rawUrl
-  if (rawUrl.startsWith("/")) return rawUrl
-  
-  // Fallback for any external/unknown paths
-  return PRODUCT_IMAGE_PLACEHOLDER
+
+export function getProductImageUrl(imagePath?: string) {
+  const p = imagePath && imagePath.trim().length > 0
+    ? imagePath
+    : "/images/product-placeholder.svg";
+
+  // important: prefix "/gandscales-site" in production
+  return withBasePath(p);
 }
+
 
 // Data accessors
 export function getAllCategories(): Category[] {
