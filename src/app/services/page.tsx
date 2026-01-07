@@ -14,7 +14,8 @@ import {
   Gauge,
   Hammer,
   Package,
-  CalendarCheck
+  CalendarCheck,
+  GraduationCap,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
@@ -292,6 +293,79 @@ export default function ServicesPage() {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Staff Training Section */}
+      <section className="bg-steel-900 py-20 lg:py-28 border-t border-white/10">
+        <div className="container-wide">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <span className="inline-block text-sm font-semibold text-brand-400 tracking-wider uppercase mb-4">
+                Expert Knowledge
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-display font-bold text-white mb-6">
+                Staff Training
+              </h2>
+              <p className="text-steel-300 mb-8 text-lg leading-relaxed">
+                G &amp; T Scales Services employs trained technicians capable of calibrating, 
+                maintaining, and repairing most makes and models of scales. Our experienced 
+                scale technicians are specialized and they quickly identify and solve scale 
+                equipment problems.
+              </p>
+              <p className="text-steel-300 mb-8 leading-relaxed">
+                Our professional service consultants study how critical each instrument is to 
+                your goals, as measured by its impact on quality, downtime, accuracy, and 
+                regulatory compliance. Then they determine the right service strategies for 
+                the instruments that best support those business goals.
+              </p>
+              <p className="text-steel-300 mb-8 leading-relaxed">
+                These service strategies typically include appropriate calibration intervals, 
+                calibration certificate, preventive maintenance, repair, training, and regulatory 
+                compliance services. We offer digital scale repair, truck scale repair, and scale 
+                calibration service. G &amp; T Scales Services&apos; scale calibration service is unsurpassed.
+              </p>
+              <p className="text-brand-300 font-semibold">
+                Our calibration process is backed by a genuine Quality Assurance Program.
+              </p>
+            </div>
+
+            <div>
+              <Card className="premium-card overflow-hidden">
+                <div className="h-2 bg-brand-500" />
+                <CardContent className="p-8 lg:p-10">
+                  <div className="flex items-center gap-4 mb-8">
+                    <div className="w-14 h-14 rounded-xl bg-brand-500/20 border border-brand-400/40 flex items-center justify-center">
+                      <GraduationCap className="h-7 w-7 text-brand-300" />
+                    </div>
+                    <h3 className="text-xl font-display font-bold text-white">
+                      Training Areas
+                    </h3>
+                  </div>
+                  
+                  <ul className="space-y-4">
+                    {[
+                      { title: "Services", description: "Comprehensive service training for all equipment types" },
+                      { title: "Calibration", description: "ISO-traceable calibration techniques and procedures" },
+                      { title: "Installation", description: "Proper installation methods for optimal performance" },
+                      { title: "Maintenance", description: "Preventive and routine maintenance best practices" },
+                      { title: "Repair", description: "Diagnostic and repair skills for all scale models" },
+                    ].map((item) => (
+                      <li key={item.title} className="flex items-start gap-4">
+                        <div className="w-8 h-8 rounded-lg bg-brand-500/20 flex items-center justify-center shrink-0 mt-0.5">
+                          <CheckCircle2 className="h-5 w-5 text-brand-400" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-white">{item.title}</h4>
+                          <p className="text-sm text-steel-400">{item.description}</p>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </section>

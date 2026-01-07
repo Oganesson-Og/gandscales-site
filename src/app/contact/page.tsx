@@ -5,6 +5,7 @@ import {
   Phone, 
   Clock, 
   ArrowRight,
+  Mail,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -13,9 +14,23 @@ import {
   BOTSWANA_ADDRESS,
   BOTSWANA_EMAIL,
   BOTSWANA_PHONE,
+  BOTSWANA_CELL_1,
+  BOTSWANA_FAX,
+  BULAWAYO_ADDRESS,
+  BULAWAYO_PHONE_1,
+  BULAWAYO_PHONE_2,
+  BULAWAYO_EMAIL,
+  SA_ADDRESS,
+  SA_PHONE,
   COMPANY_ADDRESS,
   COMPANY_EMAIL,
   COMPANY_PHONE,
+  COMPANY_PHONE_ALT,
+  COMPANY_CELL_1,
+  COMPANY_CELL_2,
+  COMPANY_FAX,
+  COMPANY_EMAIL_GODWIN,
+  COMPANY_EMAIL_MIRIAM,
   generateWhatsAppUrl,
   WHATSAPP_NUMBER,
 } from "@/lib/utils"
@@ -23,36 +38,55 @@ import {
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Get in touch with G&T Scale Services. Reach our Zimbabwe (Harare) office or our Botswana (Gaborone) office — call, WhatsApp, or email us for help with weighing equipment.",
+    "Get in touch with G&T Scale Services. Reach our Zimbabwe (Harare, Bulawayo), South Africa, or Botswana offices — call, WhatsApp, or email us for help with weighing equipment.",
 }
 
-const contactInfo = [
+const officeLocations = [
   {
-    icon: MapPin,
-    title: "Zimbabwe Office",
-    details: [
-      COMPANY_ADDRESS,
-      `Phone: ${COMPANY_PHONE}`,
-      `Email: ${COMPANY_EMAIL}`,
+    country: "Zimbabwe",
+    city: "Harare",
+    isHeadOffice: true,
+    address: COMPANY_ADDRESS,
+    phones: [
+      { label: "Tel", value: COMPANY_PHONE },
+      { label: "Tel", value: COMPANY_PHONE_ALT },
+      { label: "Cell", value: COMPANY_CELL_1 },
+      { label: "Cell", value: COMPANY_CELL_2 },
+    ],
+    fax: COMPANY_FAX,
+    emails: [COMPANY_EMAIL_GODWIN, COMPANY_EMAIL_MIRIAM, COMPANY_EMAIL],
+  },
+  {
+    country: "Zimbabwe",
+    city: "Bulawayo",
+    isHeadOffice: false,
+    address: BULAWAYO_ADDRESS,
+    phones: [
+      { label: "Tel", value: BULAWAYO_PHONE_1 },
+      { label: "Tel", value: BULAWAYO_PHONE_2 },
+    ],
+    emails: [BULAWAYO_EMAIL],
+  },
+  {
+    country: "South Africa",
+    city: "Johannesburg",
+    isHeadOffice: false,
+    address: SA_ADDRESS,
+    phones: [
+      { label: "Tel", value: SA_PHONE },
     ],
   },
   {
-    icon: MapPin,
-    title: "Botswana Office",
-    details: [
-      BOTSWANA_ADDRESS,
-      `Phone: ${BOTSWANA_PHONE}`,
-      `Email: ${BOTSWANA_EMAIL}`,
+    country: "Botswana",
+    city: "Gaborone",
+    isHeadOffice: false,
+    address: BOTSWANA_ADDRESS,
+    phones: [
+      { label: "Tel", value: BOTSWANA_PHONE },
+      { label: "Cell", value: BOTSWANA_CELL_1 },
     ],
-  },
-  {
-    icon: Clock,
-    title: "Opening Hours",
-    details: [
-      "Monday - Friday: 8:00 AM - 5:00 PM",
-      "Saturday: 9:00 AM - 1:00 PM",
-      "Sunday: Closed",
-    ],
+    fax: BOTSWANA_FAX,
+    emails: [BOTSWANA_EMAIL],
   },
 ]
 
@@ -103,29 +137,111 @@ export default function ContactPage() {
         }
       />
 
-      {/* Contact info cards */}
-      <section className="container-wide -mt-12 relative z-10">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {contactInfo.map((info) => (
-            <Card key={info.title} className="premium-card">
-              <CardContent className="p-6">
-                <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-4">
-                  <info.icon className="h-6 w-6 text-brand-300" />
+      {/* Office Locations */}
+      <section className="container-wide py-16 lg:py-20">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-display font-bold text-white mb-4">
+            Our Offices
+          </h2>
+          <p className="text-steel-300 max-w-2xl mx-auto">
+            With locations across Southern Africa, we&apos;re ready to serve you wherever you are.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-6">
+          {officeLocations.map((office) => (
+            <Card key={`${office.country}-${office.city}`} className="premium-card overflow-hidden">
+              {office.isHeadOffice && <div className="h-1 bg-brand-500" />}
+              <CardContent className="p-6 lg:p-8">
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
+                    <MapPin className="h-6 w-6 text-brand-300" />
+                  </div>
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <h3 className="font-semibold text-white text-lg">
+                        {office.country} — {office.city}
+                      </h3>
+                      {office.isHeadOffice && (
+                        <span className="text-xs bg-brand-500/20 text-brand-300 px-2 py-0.5 rounded-full">
+                          Head Office
+                        </span>
+                      )}
+                    </div>
+                    <p className="text-sm text-steel-400 mt-1">{office.address}</p>
+                  </div>
                 </div>
-                <h3 className="font-semibold text-white mb-3">{info.title}</h3>
-                <div className="space-y-1">
-                  {info.details.map((detail, i) => (
-                    <p key={i} className="text-sm text-steel-300">{detail}</p>
-                  ))}
+
+                <div className="grid gap-3 text-sm">
+                  {/* Phone Numbers */}
+                  <div className="flex items-start gap-3">
+                    <Phone className="h-4 w-4 text-steel-400 mt-0.5 shrink-0" />
+                    <div className="space-y-1">
+                      {office.phones.map((phone, idx) => (
+                        <a
+                          key={idx}
+                          href={`tel:${phone.value.replace(/\s/g, "")}`}
+                          className="block text-steel-300 hover:text-brand-300 transition-colors"
+                        >
+                          {phone.label}: {phone.value}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Fax if available */}
+                  {office.fax && (
+                    <div className="flex items-center gap-3">
+                      <Phone className="h-4 w-4 text-steel-400 shrink-0" />
+                      <span className="text-steel-300">Fax: {office.fax}</span>
+                    </div>
+                  )}
+
+                  {/* Emails if available */}
+                  {office.emails && office.emails.length > 0 && (
+                    <div className="flex items-start gap-3">
+                      <Mail className="h-4 w-4 text-steel-400 mt-0.5 shrink-0" />
+                      <div className="space-y-1">
+                        {office.emails.map((email, idx) => (
+                          <a
+                            key={idx}
+                            href={`mailto:${email}`}
+                            className="block text-steel-300 hover:text-brand-300 transition-colors"
+                          >
+                            {email}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
               </CardContent>
             </Card>
           ))}
         </div>
+
+        {/* Opening Hours Card */}
+        <Card className="premium-card mt-6">
+          <CardContent className="p-6 lg:p-8">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
+                <Clock className="h-6 w-6 text-brand-300" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-white mb-2">Opening Hours</h3>
+                <div className="flex flex-wrap gap-x-8 gap-y-1 text-sm text-steel-300">
+                  <span>Monday - Friday: 8:00 AM - 5:00 PM</span>
+                  <span>Saturday: 9:00 AM - 1:00 PM</span>
+                  <span>Sunday: Closed</span>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
       </section>
 
       {/* Main content */}
-      <section className="container-wide py-20 lg:py-28">
+      <section className="container-wide py-20 lg:py-28 border-t border-white/10">
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Contact message */}
           <div>
@@ -201,7 +317,7 @@ export default function ContactPage() {
             {/* Map */}
             <div className="rounded-2xl overflow-hidden shadow-lg h-[400px] bg-steel-950/40 border border-white/10">
               <iframe
-                src="https://www.google.com/maps?q=G+and+T+Scale+Services,+Mutare+Rd,+Harare,+Zimbabwe&output=embed"
+                src="https://www.google.com/maps?q=204+Robert+Mugabe+Road,+Harare,+Zimbabwe&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -255,4 +371,3 @@ export default function ContactPage() {
     </div>
   )
 }
-

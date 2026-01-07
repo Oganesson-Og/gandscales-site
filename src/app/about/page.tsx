@@ -1,11 +1,11 @@
 import { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, Award, Users, Target, Eye, Heart, Shield, Zap, Clock } from "lucide-react"
+import { ArrowRight, Award, Users, Target, Eye, Heart, Shield, Zap, Clock, Lightbulb, Quote, Building2, UserCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { PageHero } from "@/components/sections/page-hero"
-import { COMPANY_FOUNDED_YEAR } from "@/lib/utils"
+import { COMPANY_FOUNDED_YEAR, COMPANY_SLOGAN } from "@/lib/utils"
 import { withBasePath } from "@/lib/withBasePath"
 
 
@@ -45,7 +45,7 @@ const milestones = [
     event:
       "Providing weighing equipment supply, repair, and certified calibration for businesses across the region.",
   },
-  { year: "Today", event: "Supporting customers in Zimbabwe and Botswana." },
+  { year: "Today", event: "Supporting customers in Zimbabwe, Botswana, South Africa and beyond." },
 ]
 
 const yearsOfExperience = Math.max(1, new Date().getFullYear() - COMPANY_FOUNDED_YEAR)
@@ -107,32 +107,36 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Story */}
+      {/* Strategy & Story */}
       <section className="section-padding bg-transparent">
         <div className="container-wide">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <span className="inline-block text-sm font-semibold text-brand-300 tracking-wider uppercase mb-4">
-              Our Story
+              Our Strategy
             </span>
             <h2 className="text-3xl sm:text-4xl font-display font-bold text-white mb-6">
               Precision and Excellence since {COMPANY_FOUNDED_YEAR}
             </h2>
             <div className="space-y-4 text-steel-300">
               <p>
-                Founded in {COMPANY_FOUNDED_YEAR}, G&T Scale Services began with a simple mission: to provide 
-                Zimbabwe&apos;s businesses with reliable, accurate weighing solutions backed by 
-                exceptional service.
+                G&amp;T Scales Services &amp; Suppliers was incorporated in {COMPANY_FOUNDED_YEAR} and is engaged in selling 
+                and servicing scales. Our product range includes high accuracy Micro weighing Scales for 
+                Laboratories, Jewellery etc. Electronic Weighing Machines, Weighing Scales, Table top 
+                Weighing Scales, Bench Scales, Heavy Duty Industrial Platform Weighing Scales, Trolley 
+                Scales, Hanging Scales, Crane Scales and Fully Electronic Weighbridge etc.
               </p>
               <p>
-                What started as a small operation has grown into the country&apos;s most trusted 
-                name in weighing equipment. Today, we serve hundreds of clients across 
-                agriculture, mining, manufacturing, retail, and healthcare sectors.
+                Weighing is fundamental to almost every business. When checking goods in, monitoring 
+                processes or quantifying products for sale, weight measurement is a vital tool in 
+                controlling costs, maintaining quality and assessing efficiency.
               </p>
               <p>
-                Our success is built on a foundation of technical expertise, genuine parts, 
-                certified calibration, and a deep understanding of our customers&apos; needs. 
-                We don&apos;t just sell equipment – we build lasting partnerships.
+                G&amp;T Scales Services does not just sell scales; rather we work with industries to 
+                develop weighing-based solutions that focus on specific needs for information and 
+                control from the shop floor to the boardroom. Our aim is to provide systems that both 
+                solve problems and create new opportunities for raising quality, improving efficiency 
+                and increasing sales.
               </p>
             </div>
           </div>
@@ -167,23 +171,32 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Mission & Vision */}
+      {/* Mission, Vision & Philosophy */}
       <section className="section-padding bg-transparent border-t border-white/10">
         <div className="container-wide">
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <span className="inline-block text-sm font-semibold text-brand-300 tracking-wider uppercase mb-4">
+              Our Foundation
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-display font-bold text-white mb-6">
+              Vision, Mission &amp; Philosophy
+            </h2>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
             <Card className="premium-card overflow-hidden">
               <div className="h-2 bg-brand-500" />
               <CardContent className="p-8 lg:p-10">
                 <div className="w-14 h-14 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-6">
-                  <Target className="h-7 w-7 text-brand-300" />
+                  <Eye className="h-7 w-7 text-brand-300" />
                 </div>
                 <h3 className="text-2xl font-display font-bold text-white mb-4">
-                  Our Mission
+                  Our Vision
                 </h3>
                 <p className="text-steel-300 text-lg">
-                  To provide accurate, reliable, and innovative weighing solutions that 
-                  empower businesses to operate efficiently, maintain compliance, and 
-                  achieve their goals with confidence.
+                  Believing in every aspect of our business, be it in servicing, supplying and repairing. 
+                  It gives us comfort to aspire for a leading role in supplying of multi head weighers 
+                  and weighing equipment for fixed weight products.
                 </p>
               </CardContent>
             </Card>
@@ -192,15 +205,31 @@ export default function AboutPage() {
               <div className="h-2 bg-accent-orange-500" />
               <CardContent className="p-8 lg:p-10">
                 <div className="w-14 h-14 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-6">
-                  <Eye className="h-7 w-7 text-accent-orange-300" />
+                  <Target className="h-7 w-7 text-accent-orange-300" />
                 </div>
                 <h3 className="text-2xl font-display font-bold text-white mb-4">
-                  Our Vision
+                  Our Mission
                 </h3>
                 <p className="text-steel-300 text-lg">
-                  To be the undisputed leader in weighing equipment and services across 
-                  Southern Africa, recognized for our technical excellence, customer 
-                  commitment, and continuous innovation.
+                  Retrieving a platform for affordable services with excellent work that will 
+                  always meet your expectations.
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="premium-card overflow-hidden">
+              <div className="h-2 bg-emerald-500" />
+              <CardContent className="p-8 lg:p-10">
+                <div className="w-14 h-14 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-6">
+                  <Lightbulb className="h-7 w-7 text-emerald-300" />
+                </div>
+                <h3 className="text-2xl font-display font-bold text-white mb-4">
+                  Our Philosophy
+                </h3>
+                <p className="text-steel-300 text-lg">
+                  Achievement requires positive responsibilities. We stand for the expertise of highest order, 
+                  problem solving with a degree of professionalism and innovation, sustainability, high quality 
+                  and effective use of resources.
                 </p>
               </CardContent>
             </Card>
@@ -334,6 +363,172 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* CEO Message */}
+      <section className="section-padding bg-steel-900 border-t border-white/10">
+        <div className="container-wide">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <span className="inline-block text-sm font-semibold text-brand-400 tracking-wider uppercase mb-4">
+                Leadership Message
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-display font-bold text-white mb-6">
+                C.E.O Message
+              </h2>
+            </div>
+            
+            <Card className="premium-card overflow-hidden">
+              <CardContent className="p-8 lg:p-12">
+                <div className="flex justify-center mb-8">
+                  <div className="w-20 h-20 rounded-full bg-brand-500/20 border-2 border-brand-400/40 flex items-center justify-center">
+                    <Quote className="h-10 w-10 text-brand-300" />
+                  </div>
+                </div>
+                
+                <div className="space-y-6 text-steel-300 text-lg leading-relaxed">
+                  <p>
+                    Without question, profit is the fuel to the engine that propels a corporation forward. 
+                    The blind pursuit of profit at all costs is untenable. It is essential that we make 
+                    money the right way. After all if communities suffer as a result of a company&apos;s 
+                    actions, those returns are not sustainable. Today, a company&apos;s profits are 
+                    inextricably tied to the prosperity of its consumers, customers, employees, communities 
+                    and society at large.
+                  </p>
+                  <p>
+                    More than ever before, profitability and sustainability are synonymous. Corporations 
+                    should embrace a new way of doing business: aligning the needs of their business with 
+                    the needs of the world around them. With this in mind G &amp; T Scale Services and 
+                    suppliers looked out across the scale industry nearly a decade ago and charted a new course.
+                  </p>
+                  <p>
+                    We recognised a simple truth: there is profit in purpose. Sustainability is not something 
+                    to support with the profits we make, but rather a path to delivering profitability. Weaving 
+                    sustainability into the very fabric of our organisation is a way to help future-proof our 
+                    business for the changing world around us.
+                  </p>
+                  <p>
+                    It is clear in the years and decades ahead, the private sector will be increasingly impacted 
+                    by global environmental and social challenges that no single company, industry, government 
+                    or non-governmental organisation (NGO) can address alone. Collaborative solutions, in which 
+                    we all play a role, holds the key to a meaningful and lasting progress.
+                  </p>
+                  <p>
+                    That is why G &amp; T Scale Services is more committed to performance with purpose than ever 
+                    before. It is how we will position our business for sustainable long-term growth not only in 
+                    Zimbabwe, Botswana and the UK but across the globe and contribute to solving broader challenges 
+                    that impact each and every one of us.
+                  </p>
+                  <p className="text-brand-300 font-semibold">
+                    Thank you for your interest in our company, our brands and our products.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Organogram */}
+      <section className="section-padding bg-transparent border-t border-white/10">
+        <div className="container-wide">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="inline-block text-sm font-semibold text-brand-300 tracking-wider uppercase mb-4">
+              Company Structure
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-display font-bold text-white mb-6">
+              Organogram
+            </h2>
+            <p className="text-lg text-steel-300">
+              Our organizational structure ensures efficient operations and clear accountability.
+            </p>
+          </div>
+          
+          <div className="max-w-4xl mx-auto">
+            {/* Directors - Top Level */}
+            <div className="flex justify-center mb-8">
+              <Card className="premium-card w-64">
+                <CardContent className="p-6 text-center">
+                  <div className="w-14 h-14 rounded-full bg-brand-500/30 border border-brand-400/40 flex items-center justify-center mx-auto mb-3">
+                    <Building2 className="h-7 w-7 text-brand-300" />
+                  </div>
+                  <h3 className="text-xl font-display font-bold text-white">Directors</h3>
+                </CardContent>
+              </Card>
+            </div>
+            
+            {/* Connector Line */}
+            <div className="flex justify-center mb-2">
+              <div className="w-px h-8 bg-white/20" />
+            </div>
+            <div className="flex justify-center mb-8">
+              <div className="w-[600px] h-px bg-white/20 relative">
+                <div className="absolute left-0 top-0 w-px h-8 bg-white/20" />
+                <div className="absolute right-0 top-0 w-px h-8 bg-white/20" />
+                <div className="absolute left-1/2 -translate-x-1/2 top-0 w-px h-8 bg-white/20" />
+              </div>
+            </div>
+            
+            {/* Second Level - Managers */}
+            <div className="grid grid-cols-3 gap-6">
+              <Card className="premium-card">
+                <CardContent className="p-5 text-center">
+                  <div className="w-12 h-12 rounded-full bg-emerald-500/30 border border-emerald-400/40 flex items-center justify-center mx-auto mb-3">
+                    <UserCircle className="h-6 w-6 text-emerald-300" />
+                  </div>
+                  <h4 className="font-semibold text-white text-sm">Operations Manager</h4>
+                </CardContent>
+              </Card>
+              
+              <Card className="premium-card">
+                <CardContent className="p-5 text-center">
+                  <div className="w-12 h-12 rounded-full bg-blue-500/30 border border-blue-400/40 flex items-center justify-center mx-auto mb-3">
+                    <UserCircle className="h-6 w-6 text-blue-300" />
+                  </div>
+                  <h4 className="font-semibold text-white text-sm">Finance Manager</h4>
+                </CardContent>
+              </Card>            
+              <Card className="premium-card">
+                <CardContent className="p-5 text-center">
+                  <div className="w-12 h-12 rounded-full bg-purple-500/30 border border-purple-400/40 flex items-center justify-center mx-auto mb-3">
+                    <UserCircle className="h-6 w-6 text-purple-300" />
+                  </div>
+                  <h4 className="font-semibold text-white text-sm">Marketing</h4>
+                </CardContent>
+              </Card>
+            </div>
+            {/* Marketing Sub-structure - directly under Marketing (3rd column) */}
+            <div className="grid grid-cols-3 gap-6 mt-6">
+              <div className="col-start-3 flex flex-col items-center">
+                {/* This width = 76 + 76 + 16(gap-4) = 168px */}
+                <div className="relative w-[168px] flex gap-4 pt-14 justify-center">
+                  {/* main drop from Marketing card */}
+                  <div className="absolute left-1/2 -translate-x-1/2 top-0 w-px h-8 bg-white/20" />
+
+                  {/* horizontal bar between card centers */}
+                  <div className="absolute left-[38px] right-[38px] top-8 h-px bg-white/20" />
+
+                  {/* branches down into each small card center */}
+                  <div className="absolute left-[38px] top-8 w-px h-6 bg-white/20" />
+                  <div className="absolute right-[38px] top-8 w-px h-6 bg-white/20" />
+
+                  {/* Third Level - Marketing Sub-teams */}
+                  <Card className="premium-card w-[76px]">
+                    <CardContent className="p-3 text-center">
+                      <h5 className="font-medium text-steel-200 text-xs">Support</h5>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="premium-card w-[76px]">
+                    <CardContent className="p-3 text-center">
+                      <h5 className="font-medium text-steel-200 text-xs">Sales</h5>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="section-padding bg-transparent relative overflow-hidden border-t border-white/10">
         {/* Background decoration */}
@@ -368,4 +563,3 @@ export default function AboutPage() {
     </div>
   )
 }
-

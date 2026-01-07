@@ -71,18 +71,42 @@ export function getBaseUrl(): string {
   return ""
 }
 
-// Company info (sourced from `inventory/` legacy crawl where available)
+// Company info (from company profile)
 export const COMPANY_FOUNDED_YEAR = 2004
+export const COMPANY_SLOGAN = "We believe in our business, servicing, supplying and repairing of scales"
 
-// Zimbabwe (Harare) office
+// Zimbabwe (Harare) office - Head Office
 export const COMPANY_PHONE = "+263 242 498 883"
-// Placeholder WhatsApp number (user-provided)
-export const WHATSAPP_NUMBER = "00971561929377"
+export const COMPANY_PHONE_ALT = "+263 242 498 884"
+export const COMPANY_DIRECT_LINE = "+263 4 490476"
+export const COMPANY_CELL_1 = "+263 772 914 705"
+export const COMPANY_CELL_2 = "+263 772 819 521"
+export const COMPANY_FAX = "+263 4 498885"
+export const WHATSAPP_NUMBER = "+263772914705"
 export const COMPANY_EMAIL = "sales@gandtscales.com"
-export const COMPANY_ADDRESS = "Mutare Rd, Eastview, Harare, Zimbabwe"
+export const COMPANY_EMAIL_GODWIN = "godwin@gandtscales.com"
+export const COMPANY_EMAIL_MIRIAM = "miriam@gandtscales.com"
+export const COMPANY_ADDRESS = "204 Robert Mugabe Road, Harare, Zimbabwe"
+export const COMPANY_WEBSITE = "www.gandtscales.com"
 
-// Botswana (Gaborone) office (sourced from legacy screenshots)
+// Zimbabwe (Bulawayo) office
+export const BULAWAYO_ADDRESS = "Suite 6 Fanum Building, AAZ offices, Leopold Takawira and J. Tongogara, Bulawayo"
+export const BULAWAYO_PHONE_1 = "+263 292 60779"
+export const BULAWAYO_PHONE_2 = "+263 292 60714"
+export const BULAWAYO_EMAIL = "salesbyo@gandtscales.com"
+
+// South Africa office
+export const SA_ADDRESS = "32 Bok Street, Joubert Park, Gauteng 2198"
+export const SA_PHONE = "+27 78 603 2628"
+
+// Botswana (Gaborone) office
 export const BOTSWANA_PHONE = "+267 311 0810"
+export const BOTSWANA_CELL_1 = "+267 71 745 655"
+export const BOTSWANA_CELL_2 = "+267 75 484 004"
+export const BOTSWANA_CELL_3 = "+267 75 484 024"
+export const BOTSWANA_FAX = "+267 311 0811"
 export const BOTSWANA_EMAIL = "sales@gandtscalesbotswana.com"
-export const BOTSWANA_ADDRESS = "Plot 170, Unit 11 Commerce Park, Gaborone, Botswana"
+export const BOTSWANA_EMAIL_GODWIN = "godwin@gandtscales.com"
+export const BOTSWANA_EMAIL_MIRIAM = "miriam@gandtscales.com"
+export const BOTSWANA_ADDRESS = "Plot 170, Unit 11, Commerce Park, Box 839 Kgalaview, Gaborone, Botswana"
 
