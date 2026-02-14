@@ -1,13 +1,23 @@
+const rawBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const normalizedBasePath =
+  rawBasePath && rawBasePath !== "/"
+    ? `/${rawBasePath.replace(/^\/+|\/+$/g, "")}`
+    : "";
+
 const nextConfig = {
   output: "export",
   trailingSlash: true,
   images: { unoptimized: true },
-
-  basePath: "/gandscales-site",
-  assetPrefix: "/gandscales-site/",
-
+  ...(normalizedBasePath
+    ? {
+        basePath: normalizedBasePath,
+        assetPrefix: `${normalizedBasePath}/`,
+      }
+    : {}),
   env: {
-    NEXT_PUBLIC_BASE_PATH: "/gandscales-site",
+    NEXT_PUBLIC_BASE_PATH: normalizedBasePath,
+    NEXT_PUBLIC_SITE_URL:
+      process.env.NEXT_PUBLIC_SITE_URL || "https://gandtscales.com",
   },
 };
 

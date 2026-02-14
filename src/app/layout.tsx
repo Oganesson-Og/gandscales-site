@@ -5,7 +5,61 @@ import { Navbar } from "@/components/layout/navbar"
 import { Footer } from "@/components/layout/footer"
 import { Toaster } from "@/components/ui/toaster"
 import { ThemeProvider } from "@/components/providers/theme-provider"
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
+import { COMPANY_EMAIL, COMPANY_PHONE } from "@/lib/utils"
+
+const rawBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
+const normalizedBasePath =
+  rawBasePath && rawBasePath !== "/"
+    ? `/${rawBasePath.replace(/^\/+|\/+$/g, "")}`
+    : ""
+
+const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://gandtscales.com").replace(
+  /\/+$/,
+  ""
+)
+const siteRootUrl = `${siteUrl}${normalizedBasePath}`
+const seoDescription =
+  "Buy scales in Zimbabwe from G&T Scale Services. We supply industrial, agricultural, retail and laboratory scales with installation, repair, and certified calibration."
+
+function absoluteUrl(path: string = "/") {
+  const normalizedPath = path === "/" ? "" : path.replace(/^\/+/, "")
+  return normalizedPath ? `${siteRootUrl}/${normalizedPath}` : siteRootUrl
+}
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "G&T Scale Services",
+  url: siteRootUrl,
+  image: absoluteUrl("/og-image.svg"),
+  telephone: COMPANY_PHONE,
+  email: COMPANY_EMAIL,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "204 Robert Mugabe Road",
+    addressLocality: "Harare",
+    addressCountry: "ZW",
+  },
+  areaServed: [
+    {
+      "@type": "Country",
+      name: "Zimbabwe",
+    },
+  ],
+  sameAs: [
+    "https://facebook.com/gandtscales",
+    "https://instagram.com/gandtscales",
+    "https://linkedin.com/company/gandtscales",
+  ],
+}
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "G&T Scale Services",
+  url: siteRootUrl,
+  inLanguage: "en-ZW",
+}
 
 const inter = Inter({
   subsets: ["latin"],
@@ -21,48 +75,49 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: "G&T Scale Services | Precision Weighing Equipment Solutions",
+    default: "Scales in Zimbabwe | G&T Scale Services",
     template: "%s | G&T Scale Services",
   },
-  description:
-    "Leading weighing company providing precision weighing equipment solutions. Reliable supply, repair, and certified calibration services since 2004.",
+  description: seoDescription,
   keywords: [
+    "scales in Zimbabwe",
+    "scales Zimbabwe",
+    "weighing scales Zimbabwe",
+    "industrial scales Zimbabwe",
+    "digital scales Zimbabwe",
+    "weighbridge Zimbabwe",
+    "scale calibration Zimbabwe",
+    "platform scales Zimbabwe",
+    "retail scales Zimbabwe",
+    "agricultural scales Zimbabwe",
+    "laboratory scales Zimbabwe",
     "weighing equipment",
-    "industrial scales",
-    "weighbridge",
-    "scale calibration",
-    "Zimbabwe",
-    "precision scales",
-    "livestock scales",
-    "retail scales",
   ],
   authors: [{ name: "G&T Scale Services" }],
   creator: "G&T Scale Services",
   publisher: "G&T Scale Services",
-  metadataBase: new URL("https://gandtscales.com"),
+  metadataBase: new URL(siteRootUrl),
   openGraph: {
     type: "website",
     locale: "en_ZW",
-    url: "https://gandtscales.com",
+    url: siteRootUrl,
     siteName: "G&T Scale Services",
-    title: "G&T Scale Services | Precision Weighing Equipment Solutions",
-    description:
-      "Leading weighing company providing precision weighing equipment solutions. Reliable supply, repair, and certified calibration services since 2004.",
+    title: "Scales in Zimbabwe | G&T Scale Services",
+    description: seoDescription,
     images: [
       {
-        url: "${basePath}/og-image.svg",
+        url: absoluteUrl("/og-image.svg"),
         width: 1200,
         height: 630,
-        alt: "G&T Scale Services",
+        alt: "G&T Scale Services - Scales in Zimbabwe",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "G&T Scale Services | Precision Weighing Equipment Solutions",
-    description:
-      "Leading weighing company providing precision weighing equipment solutions. Reliable supply, repair, and certified calibration services since 2004.",
-    images: ["${basePath}/og-image.svg"],
+    title: "Scales in Zimbabwe | G&T Scale Services",
+    description: seoDescription,
+    images: [absoluteUrl("/og-image.svg")],
   },
   robots: {
     index: true,
@@ -76,10 +131,10 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "${basePath}/favicon.svg",
-    apple: "${basePath}/apple-touch-icon.svg",
+    icon: absoluteUrl("/favicon.svg"),
+    apple: absoluteUrl("/apple-touch-icon.svg"),
   },
-  manifest: "${basePath}/site.webmanifest",
+  manifest: absoluteUrl("/site.webmanifest"),
 }
 
 export default function RootLayout({
@@ -92,6 +147,18 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${dmSans.variable} font-sans antialiased`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(localBusinessSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteSchema),
+          }}
+        />
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

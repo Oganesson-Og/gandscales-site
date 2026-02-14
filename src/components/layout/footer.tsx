@@ -151,7 +151,16 @@ export function Footer() {
       <div className="border-t border-steel-800">
         <div className="container-wide py-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-steel-500 text-sm text-center md:text-left">
-            © {new Date().getFullYear()} Keith Oganesson. All rights reserved.
+            (c) {new Date().getFullYear()}{" "}
+            <a
+              href="https://klamagroup.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-steel-400 hover:text-white transition-colors underline decoration-white/20 underline-offset-4"
+            >
+              klama
+            </a>
+            . All rights reserved.
           </p>
           
           {/* Social links */}
